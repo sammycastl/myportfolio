@@ -1,21 +1,97 @@
-<nav>
-  <a href="/" class="logo">JP</a>
-  <div class="links">
-    <a href="/about">Sobre Mí</a>
-    <a href="/projects">Proyectos</a>
-    <a href="/contact">Contacto</a>
-  </div>
-</nav>
+<header class="header">
+  <nav class="nav">
+    <a href="/" class="logo">🌐 <span class</a>
+    <div class="links">
+      <a href="/about" class="nav-link">👨🏿‍💻 Sobre Mí</a>
+      <a href="/projects" class="nav-link">🚀 Proyectos</a>
+      <a href="/contact" class="nav-link">📩 Contacto</a>
+    </div>
+  </nav>
+</header>
 
 <style>
-  nav {
+  .header {
+    background: #2A5C9A; /* Mismo azul que el footer */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav {
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
-    background: #f8f8f8;
+    align-items: center;
+    padding: 1.2rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
   }
+  
   .logo {
-    font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .logo-text {
+    color: #FFD700; /* Dorado para contraste */
+  }
+  
+  .links {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.5rem 0;
+    position: relative;
+  }
+  
+  .nav-link:hover {
+    color: #FFD700;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #FFD700;
+    transition: width 0.3s;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav {
+      padding: 1rem;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .links {
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .nav-link {
+      font-size: 1rem;
+    }
   }
 </style>

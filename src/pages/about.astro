@@ -1,7 +1,5 @@
 ---
-// Importaciones
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SkillsChart from '../components/SkillsChart.astro'; // (Opcional: gráfico de habilidades)
 ---
 
 <BaseLayout title="Sobre Mí">
@@ -11,61 +9,71 @@ import SkillsChart from '../components/SkillsChart.astro'; // (Opcional: gráfic
       <div class="about-photo">
         <img 
           src="/images/profile.jpg" 
-          alt="Foto de perfil de [Tu Nombre]" 
+          alt="Foto de Nelson Martínez" 
           width="400" 
           height="500"
           loading="lazy"
         />
         <div class="quick-info">
-          <h3>Datos Rápidos</h3>
+          <h3>📌 Datos Rápidos</h3>
           <ul>
-            <li>📍 Ubicación: Ciudad, País</li>
-            <li>🎓 Titulación: Ingeniero en [Tu Especialidad]</li>
-            <li>🏢 Experiencia: 5+ años</li>
-            <li>📧 Email: contacto@tudominio.com</li>
+            <li>📍 <strong>Tegucigalpa, Honduras</strong></li>
+            <li>🎓 <strong>Ingeniero en Sistemas</strong> (UNAH)</li>
+            <li>⏳ <strong>1+ año</strong> de experiencia</li>
+            <li>📧 <strong>nsmartinezc@unah.hn</strong></li>
           </ul>
         </div>
       </div>
 
       <!-- Columna derecha: Bio y habilidades -->
       <div class="about-content">
-        <h1 class="title">Hola, soy <span>[Tu Nombre]</span></h1>
+        <h1 class="title">Hola, soy <span>Nelson Martínez</span> 👨‍💻</h1>
         
         <div class="bio">
           <p>
-            Ingeniero apasionado por [tu especialidad/intereses], con experiencia en 
-            [áreas clave, ej: "diseño de infraestructuras sostenibles" o "desarrollo 
-            de sistemas escalables en la nube"].
+            Ingeniero en Sistemas especializado en <strong>redes Cisco (CCNA)</strong> y <strong>desarrollo web full-stack</strong>. 
+            Apasionado por crear soluciones que integren infraestructura de red con aplicaciones inteligentes.
           </p>
           <p>
-            He trabajado en [número] proyectos destacados para clientes como 
-            [Empresa 1], [Empresa 2], donde logré [resultado cuantificable, 
-            ej: "optimizar procesos en un 30%"].
+            Combino conocimientos en <strong>configuración de routers/switches</strong> con desarrollo de 
+            modelos de <strong>machine learning en Python</strong> para automatizar procesos críticos.
           </p>
         </div>
 
         <!-- Sección de Habilidades -->
         <div class="skills">
-          <h2>Mis Habilidades</h2>
+          <h2>🛠️ Mis Habilidades Técnicas</h2>
           <div class="skills-grid">
-            <!-- Habilidades Técnicas -->
+            <!-- Redes -->
             <div class="skill-category">
-              <h3>🛠️ Técnicas</h3>
+              <h3>🔌 Redes Cisco</h3>
               <ul>
-                <li>AutoCAD / Revit</li>
-                <li>Python / MATLAB</li>
-                <li>Análisis FEM</li>
-                <li>Gestión de Proyectos</li>
+                <li>Configuración de routers/switches</li>
+                <li>Protocolos: OSPF, VLANs, IPv6</li>
+                <li>Seguridad: ACLs, VPNs</li>
+                <li>Wireshark (análisis de tráfico)</li>
               </ul>
             </div>
             
-            <!-- Habilidades Blandas -->
+            <!-- Programación -->
             <div class="skill-category">
-              <h3>💡 Blandas</h3>
+              <h3>💻 Programación</h3>
               <ul>
-                <li>Liderazgo de equipos</li>
-                <li>Comunicación técnica</li>
-                <li>Resolución de problemas</li>
+                <li>Python (Pandas, Scikit-learn)</li>
+                <li>JavaScript (React, Node.js)</li>
+                <li>Bases de datos SQL/NoSQL</li>
+                <li>APIs REST</li>
+              </ul>
+            </div>
+
+            <!-- Machine Learning -->
+            <div class="skill-category">
+              <h3>🧠 ML/AI</h3>
+              <ul>
+                <li>Modelos de clasificación/regresión</li>
+                <li>Procesamiento de datos</li>
+                <li>TensorFlow básico</li>
+                <li>Automatización con Python</li>
               </ul>
             </div>
           </div>
@@ -73,8 +81,8 @@ import SkillsChart from '../components/SkillsChart.astro'; // (Opcional: gráfic
 
         <!-- Llamado a la acción -->
         <div class="cta">
-          <a href="/projects" class="button">Ver mis proyectos</a>
-          <a href="/contact" class="button-outline">Contactarme</a>
+          <a href="/projects" class="button">👀 Ver mis proyectos</a>
+          <a href="/contact" class="button-outline">📩 Contactarme</a>
         </div>
       </div>
     </div>
@@ -85,6 +93,7 @@ import SkillsChart from '../components/SkillsChart.astro'; // (Opcional: gráfic
   /* Estilos generales */
   .about-section {
     padding: 3rem 0;
+    background: #f8fafc;
   }
   .about-container {
     max-width: 1200px;
@@ -98,13 +107,14 @@ import SkillsChart from '../components/SkillsChart.astro'; // (Opcional: gráfic
   /* Foto de perfil */
   .about-photo img {
     width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    border: 3px solid #2A5C9A;
   }
   .quick-info {
-    background: #f8f9fa;
+    background: #1a1a2e;
+    color: white;
     padding: 1.5rem;
-    border-radius: 8px;
+    border-radius: 12px;
     margin-top: 1.5rem;
   }
   .quick-info ul {
@@ -112,27 +122,43 @@ import SkillsChart from '../components/SkillsChart.astro'; // (Opcional: gráfic
     padding: 0;
   }
   .quick-info li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.7rem;
   }
 
   /* Contenido principal */
+  .title {
+    font-size: 2.3rem;
+    color: #1a1a2e;
+  }
   .title span {
-    color: #2A5C9A; /* Color primario */
+    color: #2A5C9A;
   }
   .bio p {
     line-height: 1.8;
     margin-bottom: 1.5rem;
+    font-size: 1.1rem;
   }
 
   /* Habilidades */
   .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
     margin-top: 1rem;
+  }
+  .skill-category {
+    background: white;
+    padding: 1.2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .skill-category h3 {
+    color: #2A5C9A;
+    margin-top: 0;
+    font-size: 1.2rem;
   }
   .skill-category ul {
     list-style: none;
@@ -140,35 +166,51 @@ import SkillsChart from '../components/SkillsChart.astro'; // (Opcional: gráfic
   }
   .skill-category li {
     background: #f1f5f9;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1rem;
     margin-bottom: 0.5rem;
     border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   /* Botones */
   .cta {
     display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
   }
   .button {
     background: #2A5C9A;
     color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 4px;
+    padding: 0.8rem 1.8rem;
+    border-radius: 6px;
     text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s;
+  }
+  .button:hover {
+    transform: translateY(-2px);
   }
   .button-outline {
     border: 2px solid #2A5C9A;
     color: #2A5C9A;
-    padding: 0.8rem 1.5rem;
-    border-radius: 4px;
+    padding: 0.8rem 1.8rem;
+    border-radius: 6px;
     text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+  }
+  .button-outline:hover {
+    background: #f0f7ff;
   }
 
   /* Responsive */
   @media (max-width: 768px) {
     .about-container {
+      grid-template-columns: 1fr;
+    }
+    .skills-grid {
       grid-template-columns: 1fr;
     }
   }

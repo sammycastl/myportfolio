@@ -1,41 +1,85 @@
 ---
-// Importaciones
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ContactForm from '../components/ContactForm.astro'; // (Componente reutilizable)
+import ContactForm from '../components/ContactForm.astro';
 ---
 
 <BaseLayout title="Contacto">
   <section class="contact-section">
-    <h1 class="title">Contáctame</h1>
-    <p class="subtitle">¿Tienes un proyecto en mente? Escríbeme y hablemos.</p>
+    <h1 class="title">📱 Contáctame</h1>
+    <p class="subtitle">¿Necesitas asesoría en redes, desarrollo web o IA? Escríbeme directamente</p>
 
     <div class="contact-container">
-      <!-- Columna izquierda: Formulario -->
+      <!-- Columna izquierda: Formulario WhatsApp -->
       <div class="contact-form">
-        <ContactForm />
+        <form 
+          action="https://wa.me/50499704423" 
+          method="GET" 
+          target="_blank" 
+          class="whatsapp-form"
+        >
+          <div class="form-group">
+            <label for="name">Nombre completo</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              required
+              placeholder="Ej: Carlos López"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email (opcional)</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              placeholder="tu@email.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea 
+              id="message" 
+              name="text" 
+              rows="5" 
+              required
+              placeholder="Hola Nelson, necesito ayuda con..."
+            ></textarea>
+          </div>
+
+          <button type="submit" class="submit-button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-10.446-7.16c-.32.104-.5.167-.715.535-.215.367-.82 1.325-.82 1.325s-.28.447-.535.823c-.33.477-.676.84-1.231.84H5.1l-.38-.01c-.372-.01-.83-.18-1.242-.477-.412-.297-.7-.653-.954-1.02-.41-.62-.73-1.38-.93-2.12-.2-.74-.23-1.45-.23-2.12 0-.67.1-1.31.3-1.88.2-.57.5-1.06.9-1.45.4-.39.9-.68 1.46-.85.56-.17 1.17-.23 1.78-.12.61.11 1.17.34 1.64.67.47.33.87.75 1.16 1.22.29.47.47.97.53 1.46.06.49 0 .96-.15 1.35-.13.37-.34.66-.6.85-.26.19-.54.28-.86.38" fill="#fff"/>
+              <path d="M12 22a9.91 9.91 0 01-5-1.35l-3.45 1.05 1.1-3.35A9.91 9.91 0 012 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10" fill="#25D366"/>
+            </svg>
+            Enviar por WhatsApp
+          </button>
+        </form>
       </div>
 
-      <!-- Columna derecha: Info de contacto + Mapa -->
+      <!-- Columna derecha: Info de contacto -->
       <div class="contact-info">
         <div class="info-card">
           <h3>📧 Email</h3>
-          <a href="mailto:contacto@tudominio.com">contacto@tudominio.com</a>
+          <a href="mailto:nsmartinezc@unah.hn">nsmartinezc@unah.hn</a>
 
-          <h3>📱 Teléfono</h3>
-          <a href="tel:+521234567890">+52 123 456 7890</a>
+          <h3>📱 Teléfono/WhatsApp</h3>
+          <a href="https://wa.me/50499704423" target="_blank">+504 9970-4423</a>
 
           <h3>📍 Ubicación</h3>
-          <p>Ciudad, País</p>
+          <p>Torre Morazán, Tegucigalpa, Honduras</p>
         </div>
 
-        <!-- Mapa (usando iframe de Google Maps) -->
+        <!-- Mapa Torre Morazán -->
         <div class="map">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.6789!2d-99.123456!3d19.432607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDI1JzU3LjQiTiA5OcKwMDcnMTIuMiJX!5e0!3m2!1sen!2smx!4v1620000000000!5m2!1sen!2smx" 
-            width="100%" 
-            height="300" 
-            style="border:0;" 
-            allowfullscreen="" 
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3870.223774665615!2d-87.2069879240176!3d14.08267758685617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6fa2d7d559c0e5%3A0x5dfe8e7b8a714ef9!2sTorre%20Moraz%C3%A1n!5e0!3m2!1ses!2shn!4v1718765428043!5m2!1ses!2shn"
+            width="100%"
+            height="300"
+            style="border:0;"
+            allowfullscreen=""
             loading="lazy"
           ></iframe>
         </div>
@@ -85,6 +129,14 @@ import ContactForm from '../components/ContactForm.astro'; // (Componente reutil
     padding: 0 2rem;
   }
 
+  /* Formulario WhatsApp */
+  .whatsapp-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
   /* Tarjeta de información */
   .info-card {
     background: #f8f9fa;
@@ -111,6 +163,26 @@ import ContactForm from '../components/ContactForm.astro'; // (Componente reutil
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Botón WhatsApp */
+  .submit-button {
+    background: #25D366;
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  .submit-button:hover {
+    background: #128C7E;
   }
 
   /* Redes sociales */

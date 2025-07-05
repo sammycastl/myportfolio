@@ -1,8 +1,30 @@
 [
   {
-    "title": "Sistema de Energía Solar",
-    "description": "Diseño de paneles solares para zonas rurales.",
-    "image": "/images/solar.jpg",
-    "link": "/projects/solar"
+    "title": "Sitio Web Constructora JWT",
+    "description": "Desarrollo completo de página web responsive para empresa constructora con catálogo de proyectos y formulario de contacto integrado.",
+    "image": "/images/projects/jwt-constructora.jpg",
+    "tags": ["Web Design", "JavaScript", "Responsive"],
+    "github": "https://github.com/sammycastl/jwt.git"
+  },
+  {
+    "title": "Artículo 140 UNAH",
+    "description": "Desarrollo y mantenimiento del sitio web oficial del programa de becas de la UNAH con sistema de autenticación y panel administrativo.",
+    "image": "/images/projects/articulo140-unah.jpg",
+    "tags": ["PHP", "MySQL", "Bootstrap"],
+    "live": "https://articulo140-voae.unah.edu.hn/landing"
+  },
+  {
+    "title": "Reconocimiento Facial con Python",
+    "description": "Sistema de identificación facial usando redes neuronales convolucionales (CNN) con OpenCV y TensorFlow.",
+    "image": "/images/projects/reconocimiento-facial.jpg",
+    "tags": ["Python", "Machine Learning", "OpenCV"],
+    "github": "https://github.com/sammycastl/proyecto_ia.git"
+  },
+  {
+    "title": "ETL para Bases de Datos",
+    "description": "Pipeline de extracción, transformación y carga de datos desde múltiples fuentes a un data warehouse centralizado.",
+    "image": "/images/projects/etl-pipeline.jpg",
+    "tags": ["SQL", "Python", "Apache Airflow"],
+    "github": "https://github.com/sammycastl/ETL-BASES2.git"
   }
 ]
