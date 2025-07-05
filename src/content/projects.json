@@ -4,27 +4,47 @@
     "description": "Desarrollo completo de página web responsive para empresa constructora con catálogo de proyectos y formulario de contacto integrado.",
     "icon": "🏗️",
     "tags": ["Web Design", "JavaScript", "Responsive"],
-    "github": "https://github.com/sammycastl/jwt.git"
+    "links": [
+      {
+        "type": "github",
+        "url": "https://github.com/sammycastl/jwt.git"
+      }
+    ]
   },
   {
     "title": "Artículo 140 UNAH",
     "description": "Desarrollo y mantenimiento del sitio web oficial del programa de becas de la UNAH con sistema de autenticación y panel administrativo.",
     "icon": "🎓",
     "tags": ["PHP", "MySQL", "Bootstrap"],
-    "live": "https://articulo140-voae.unah.edu.hn/landing"
+    "links": [
+      {
+        "type": "live",
+        "url": "https://articulo140-voae.unah.edu.hn/landing"
+      }
+    ]
   },
   {
-    "title": "Reconocimiento Facial con Python",
-    "description": "Sistema de identificación facial usando redes neuronales convolucionales (CNN) con OpenCV y TensorFlow.",
-    "icon": "👁️",
-    "tags": ["Python", "Machine Learning", "OpenCV"],
-    "github": "https://github.com/sammycastl/proyecto_ia.git"
-  },
-  {
-    "title": "ETL para Bases de Datos",
-    "description": "Pipeline de extracción, transformación y carga de datos desde múltiples fuentes a un data warehouse centralizado.",
-    "icon": "📊",
-    "tags": ["SQL", "Python", "Apache Airflow"],
-    "github": "https://github.com/sammycastl/ETL-BASES2.git"
+    "title": "Plataforma E-commerce & Analytics",
+    "description": "Infraestructura escalable en Azure con 3 microservicios: frontend, backoffice y ETL analítico.",
+    "icon": "🛒",
+    "tags": ["Azure", "Terraform", "Data Warehouse"],
+    "links": [
+      {
+        "type": "github",
+        "name": "Client",
+        "url": "https://github.com/carlos-fl/ecommerce-expertos-client-side-repo"
+      },
+      {
+        "type": "github",
+        "name": "BackOffice",
+        "url": "https://github.com/sammycastl/ecommerce-infra-nginx-erp-db"
+      },
+      {
+        "type": "github",
+        "name": "Analytics",
+        "url": "https://github.com/DaroGard/ecommerce-experts-etl-repo"
+      }
+    ],
+    "architecture": "/images/architecture/ecommerce-arch.png"
   }
 ]

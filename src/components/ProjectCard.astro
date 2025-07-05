@@ -1,9 +1,25 @@
 ---
-const { title, description, image, tags, github, live } = Astro.props;
+const { 
+  title, 
+  description, 
+  icon, 
+  tags, 
+  links = [], 
+  architecture = null 
+} = Astro.props;
+
+// Función para obtener el ícono según el tipo de link
+const getLinkIcon = (type) => {
+  switch(type) {
+    case 'github': return '🐙';
+    case 'live': return '🌐';
+    default: return '🔗';
+  }
+};
 ---
 
 <article class="project-card">
-  <div class="project-icon">{image}</div>
+  <div class="project-icon">{icon}</div>
   <div class="project-content">
     <h3>{title}</h3>
     <p>{description}</p>
@@ -14,115 +30,119 @@ const { title, description, image, tags, github, live } = Astro.props;
       ))}
     </div>
 
-    <div class="project-links">
-      {github && (
-        <a href={github} target="_blank" class="link-button">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-          </svg>
-          Código
-        </a>
-      )}
-      {live && (
-        <a href={live} target="_blank" class="link-button live">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="2" y1="12" x2="22" y2="12"></line>
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-          </svg>
-          Demo
-        </a>
-      )}
-    </div>
+    {architecture && (
+      <button class="arch-button" onclick={`showArchitecture('${architecture}')`}>
+        🏗️ Ver Arquitectura
+      </button>
+    )}
+
+    {links.length > 0 && (
+      <div class="links-container">
+  {links.length > 0 && (
+    <>
+      <h4 class="links-title">Enlaces Relacionados:</h4>
+      <div class="link-items">
+        {links.map((link, index) => (
+          <a 
+            href={link.url} 
+            target="_blank" 
+            class="link-button"
+            data-type={link.type}
+            rel="noopener noreferrer"
+          >
+            {getLinkIcon(link.type)} 
+            <span>{link.name || (link.type === 'github' ? 'Repositorio' : 'Demo Live')}</span>
+          </a>
+        ))}
+      </div>
+    </>
+  )}
+</div>
+    )}
   </div>
 </article>
-
 <style>
   .project-card {
     background: white;
     border-radius: 12px;
     padding: 1.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
-    display: flex;
-    gap: 1.5rem;
+    transition: all 0.3s ease;
     border-left: 4px solid #2A5C9A;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
-  .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  .links-container {
+    margin-top: auto; /* Empuja los links hacia abajo */
+    padding-top: 1rem;
   }
 
-  .project-icon {
-    font-size: 2.5rem;
-    flex-shrink: 0;
-    margin-top: 0.5rem;
-  }
-
-  .project-content {
-    flex-grow: 1;
-  }
-
-  .project-content h3 {
-    margin-top: 0;
-    color: #1a1a2e;
-    font-size: 1.4rem;
-  }
-
-  .project-content p {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-  }
-
-  .tags {
+  .link-items {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .link-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.5rem 0.8rem;
+    background: #f0f7ff;
+    color: #2A5C9A;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    border: 1px solid #dbeafe;
+  }
+
+  .link-button:hover {
+    background: #2A5C9A;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(42, 92, 154, 0.2);
+  }
+
+  /* Estilos específicos para tipos de links */
+  .link-button[data-type="github"] {
+    background: #f5f5f5;
+    color: #333;
+  }
+
+  .link-button[data-type="github"]:hover {
+    background: #333;
+    color: white;
+  }
+
+  .link-button[data-type="live"] {
+    background: #f0fdf4;
+    color: #166534;
+    border-color: #bbf7d0;
+  }
+
+  .link-button[data-type="live"]:hover {
+    background: #166534;
+    color: white;
+  }
+
+  /* Mejora para los tags */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
     margin: 1rem 0;
   }
 
   .tag {
     background: #f0f7ff;
     color: #2A5C9A;
-    padding: 0.3rem 0.8rem;
+    padding: 0.3rem 0.6rem;
     border-radius: 20px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 500;
-  }
-
-  .project-links {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
-  }
-
-  .link-button {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.6rem 1.2rem;
-    background: #1a1a2e;
-    color: white;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: all 0.3s;
-  }
-
-  .link-button:hover {
-    background: #2A5C9A;
-  }
-
-  .link-button.live {
-    background: #f0f7ff;
-    color: #2A5C9A;
-    border: 1px solid #2A5C9A;
-  }
-
-  .link-button.live:hover {
-    background: #2A5C9A;
-    color: white;
   }
 </style>

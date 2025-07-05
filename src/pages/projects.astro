@@ -16,44 +16,10 @@ import projects from '../content/projects.json';
           description={project.description}
           icon={project.icon}
           tags={project.tags}
-          github={project.github}
-          live={project.live}
+          links={project.links || []}
+          architecture={project.architecture || null}
         />
       ))}
     </div>
   </section>
 </BaseLayout>
-
-<style>
-  .projects-section {
-    padding: 4rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    min-height: calc(100vh - 200px);
-  }
-  .title {
-    font-size: 2.5rem;
-    text-align: center;
-    color: #1a1a2e;
-  }
-  .title span {
-    color: #2A5C9A;
-  }
-  .subtitle {
-    text-align: center;
-    color: #666;
-    margin-bottom: 3rem;
-    font-size: 1.1rem;
-  }
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2rem;
-  }
-  
-  @media (max-width: 768px) {
-    .projects-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
