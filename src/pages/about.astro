@@ -1,0 +1,175 @@
+---
+// Importaciones
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SkillsChart from '../components/SkillsChart.astro'; // (Opcional: gráfico de habilidades)
+---
+
+<BaseLayout title="Sobre Mí">
+  <section class="about-section">
+    <div class="about-container">
+      <!-- Columna izquierda: Foto y datos rápidos -->
+      <div class="about-photo">
+        <img 
+          src="/images/profile.jpg" 
+          alt="Foto de perfil de [Tu Nombre]" 
+          width="400" 
+          height="500"
+          loading="lazy"
+        />
+        <div class="quick-info">
+          <h3>Datos Rápidos</h3>
+          <ul>
+            <li>📍 Ubicación: Ciudad, País</li>
+            <li>🎓 Titulación: Ingeniero en [Tu Especialidad]</li>
+            <li>🏢 Experiencia: 5+ años</li>
+            <li>📧 Email: contacto@tudominio.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Columna derecha: Bio y habilidades -->
+      <div class="about-content">
+        <h1 class="title">Hola, soy <span>[Tu Nombre]</span></h1>
+        
+        <div class="bio">
+          <p>
+            Ingeniero apasionado por [tu especialidad/intereses], con experiencia en 
+            [áreas clave, ej: "diseño de infraestructuras sostenibles" o "desarrollo 
+            de sistemas escalables en la nube"].
+          </p>
+          <p>
+            He trabajado en [número] proyectos destacados para clientes como 
+            [Empresa 1], [Empresa 2], donde logré [resultado cuantificable, 
+            ej: "optimizar procesos en un 30%"].
+          </p>
+        </div>
+
+        <!-- Sección de Habilidades -->
+        <div class="skills">
+          <h2>Mis Habilidades</h2>
+          <div class="skills-grid">
+            <!-- Habilidades Técnicas -->
+            <div class="skill-category">
+              <h3>🛠️ Técnicas</h3>
+              <ul>
+                <li>AutoCAD / Revit</li>
+                <li>Python / MATLAB</li>
+                <li>Análisis FEM</li>
+                <li>Gestión de Proyectos</li>
+              </ul>
+            </div>
+            
+            <!-- Habilidades Blandas -->
+            <div class="skill-category">
+              <h3>💡 Blandas</h3>
+              <ul>
+                <li>Liderazgo de equipos</li>
+                <li>Comunicación técnica</li>
+                <li>Resolución de problemas</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Llamado a la acción -->
+        <div class="cta">
+          <a href="/projects" class="button">Ver mis proyectos</a>
+          <a href="/contact" class="button-outline">Contactarme</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Estilos generales */
+  .about-section {
+    padding: 3rem 0;
+  }
+  .about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    padding: 0 2rem;
+  }
+
+  /* Foto de perfil */
+  .about-photo img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .quick-info {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+  }
+  .quick-info ul {
+    list-style: none;
+    padding: 0;
+  }
+  .quick-info li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* Contenido principal */
+  .title span {
+    color: #2A5C9A; /* Color primario */
+  }
+  .bio p {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Habilidades */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+  .skill-category ul {
+    list-style: none;
+    padding: 0;
+  }
+  .skill-category li {
+    background: #f1f5f9;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+  }
+
+  /* Botones */
+  .cta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .button {
+    background: #2A5C9A;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  .button-outline {
+    border: 2px solid #2A5C9A;
+    color: #2A5C9A;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .about-container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

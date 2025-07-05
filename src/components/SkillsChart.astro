@@ -1,0 +1,36 @@
+---
+// Componente básico con CSS (sin librerías)
+const skills = [
+  { name: "Python", level: 90 },
+  { name: "AutoCAD", level: 85 },
+];
+---
+<div class="skills-chart">
+  {skills.map(skill => (
+    <div class="skill-bar">
+      <span>{skill.name}</span>
+      <div class="bar-container">
+        <div 
+          class="bar-fill" 
+          style={`width: ${skill.level}%`}
+        ></div>
+      </div>
+    </div>
+  ))}
+</div>
+
+<style>
+  .skill-bar {
+    margin-bottom: 1rem;
+  }
+  .bar-container {
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+  }
+  .bar-fill {
+    height: 100%;
+    background: #2A5C9A;
+    border-radius: 4px;
+  }
+</style>
