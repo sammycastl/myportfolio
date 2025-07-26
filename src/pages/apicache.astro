@@ -1,0 +1,304 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Pipeline de Datos y API con Caché Inteligente">
+  <section class="project-detail-section">
+    <div class="project-container">
+      <!-- Encabezado del proyecto -->
+      <div class="project-header">
+        <h1>Pipeline de Datos y API con Caché Inteligente <span class="project-icon"></span></h1>
+        <p class="project-subtitle">Solución integral de backend para migración de datos, API segura y caché optimizada</p>
+        
+      </div>
+
+      <!-- Contenido principal -->
+      <div class="project-content">
+        <!-- Resumen ejecutivo -->
+        <div class="project-section">
+          <h2> Resumen del Proyecto</h2>
+          <p>
+            Implementación de un pipeline completo ETL con Azure Data Factory para migrar datos desde Azure Blob Storage
+            a Azure SQL Database, desarrollo de una API REST con FastAPI protegida con Firebase Authentication,
+            implementación de caché inteligente con Redis y sistema de monitoreo con Application Insights.
+          </p>
+        </div>
+
+        <!-- Arquitectura -->
+        <div class="project-section">
+          <div class="architecture-grid">
+            <div class="arch-components">
+              <h3>Componentes Clave:</h3>
+              <ul>
+                <li><strong>ETL con Azure Data Factory</strong>: Pipeline para extraer, transformar y cargar datos</li>
+                <li><strong>API FastAPI</strong>: Endpoints protegidos con JWT de Firebase</li>
+                <li><strong>Caché Redis</strong>: Implementación con invalidación automática</li>
+                <li><strong>Monitoreo</strong>: Azure Application Insights para métricas</li>
+                <li><strong>Despliegue</strong>: Docker y Azure App Service</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Implementación técnica -->
+        <div class="project-section">
+          <h2>Implementación Técnica</h2>
+          
+          <div class="tech-grid">
+            <!-- Proceso ETL -->
+            <div class="tech-category">
+              <h3>Proceso ETL</h3>
+              <ul>
+                <li>Extracción desde Azure Blob Storage (CSV)</li>
+                <li>Transformación de datos en Azure Data Factory</li>
+                <li>Carga en Azure SQL Database</li>
+                <li>Validación de calidad de datos</li>
+              </ul>
+            </div>
+            
+            <!-- Desarrollo API -->
+            <div class="tech-category">
+              <h3>API REST</h3>
+              <ul>
+                <li>FastAPI con Python</li>
+                <li>Autenticación con Firebase JWT</li>
+                <li>Endpoints para registro (/signup) y login (/login)</li>
+                <li>Endpoint GET /catalog con filtrado por query params</li>
+                <li>Endpoint POST /catalog protegido para admins</li>
+              </ul>
+            </div>
+
+            <!-- Caché Inteligente -->
+            <div class="tech-category">
+              <h3>Caché Inteligente</h3>
+              <ul>
+                <li>Redis para almacenamiento de caché</li>
+                <li>Llaves dinámicas basadas en query params</li>
+                <li>Invalidación automática al agregar nuevos datos</li>
+                <li>Patrón Cache-Aside</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repositorios y documentación -->
+        <div class="project-section repos">
+          <h2> Repositorios y Documentación</h2>
+          <div class="repo-links">
+            <a href="https://github.com/sammycastl/API-Cache.git" class="repo-button" target="_blank" rel="noopener noreferrer">
+              <span></span> Código
+            </a>
+            <a href="https://docs.google.com/presentation/d/11-4huf1jo172EffzTaUsrKat6qD-9hVILmoWUgkylB4/edit?usp=sharing" class="repo-button" target="_blank" rel="noopener noreferrer">
+              <span></span> Documentación
+            </a>
+          </div>
+        </div>
+
+        <!-- Lecciones aprendidas -->
+        <div class="project-section lessons">
+          <h2>💡 Lecciones Aprendidas</h2>
+          <div class="lessons-grid">
+            <div class="lesson-card">
+              <h3>✅ Lo que funcionó bien</h3>
+              <ul>
+                <li>Integración eficiente entre Azure Data Factory y Azure SQL</li>
+                <li>Creacion de los Servicios en Azure</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Llamado a la acción -->
+      <div class="project-cta">
+        <a href="/projects" class="button">👈 Volver a proyectos</a>
+        <a href="/contact" class="button-outline">💬 ¿Preguntas sobre este proyecto?</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Estilos generales */
+  .project-detail-section {
+    padding: 3rem 0;
+    background: #f8fafc;
+    color: #333;
+  }
+  .project-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Encabezado */
+  .project-header {
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 2rem;
+  }
+  .project-header h1 {
+    font-size: 2.5rem;
+    color: #1a1a2e;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .project-icon {
+    font-size: 2rem;
+  }
+  .project-subtitle {
+    font-size: 1.2rem;
+    color: #64748b;
+    margin-top: 0.5rem;
+  }
+  .project-meta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .meta-tag {
+    background: #e2e8f0;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }
+
+  /* Secciones */
+  .project-section {
+    margin-bottom: 3rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  .project-section h2 {
+    color: #2A5C9A;
+    margin-top: 0;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+
+  /* Arquitectura */
+  .architecture-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+  .arch-diagram img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+  }
+  .caption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-top: 0.5rem;
+  }
+  .arch-components ul {
+    list-style: none;
+    padding: 0;
+  }
+  .arch-components li {
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    background: #f0f7ff;
+    border-radius: 6px;
+  }
+
+  /* Grids técnicos */
+  .tech-grid, .metrics-grid, .lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .tech-category, .metric-card, .lesson-card {
+    background: #f8fafc;
+    padding: 1.2rem;
+    border-radius: 8px;
+    border-left: 4px solid #2A5C9A;
+  }
+  .tech-category h3, .metric-card h3, .lesson-card h3 {
+    margin-top: 0;
+    color: #1e293b;
+  }
+  .tech-category ul, .lesson-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .tech-category li, .lesson-card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #e2e8f0;
+  }
+
+  /* Repositorios */
+  .repo-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .repo-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: #1a1a2e;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: transform 0.3s;
+  }
+  .repo-button:hover {
+    transform: translateY(-2px);
+    background: #2A5C9A;
+  }
+
+  /* Botones */
+  .project-cta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid #e2e8f0;
+  }
+  .button {
+    background: #2A5C9A;
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s;
+  }
+  .button:hover {
+    transform: translateY(-2px);
+  }
+  .button-outline {
+    border: 2px solid #2A5C9A;
+    color: #2A5C9A;
+    padding: 0.8rem 1.8rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+  }
+  .button-outline:hover {
+    background: #f0f7ff;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .architecture-grid {
+      grid-template-columns: 1fr;
+    }
+    .project-cta {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+</style>

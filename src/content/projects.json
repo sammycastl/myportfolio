@@ -1,13 +1,21 @@
 [
   {
-    "title": "Sitio Web Constructora JWT",
-    "description": "Desarrollo completo de página web responsive para empresa constructora con catálogo de proyectos y formulario de contacto integrado.",
-    "icon": "🏗️",
-    "tags": ["Web Design", "JavaScript", "Responsive"],
+    "title": "Pipeline de Datos y API con Caché Inteligente",
+    "description": "Solución integral de backend que demuestra la capacidad de migrar datos a gran escala, exponerlos a través de una API segura y optimizada, y desplega en un entorno de nube productivo. Implementa de un sistema de monitoreo y una estrategia de caché con invalidación automática.",
+    "icon": "🎓",
+    "tags": ["Python", "Azure", "Firebase"],
     "links": [
       {
         "type": "github",
-        "url": "https://github.com/sammycastl/jwt.git"
+        "name": "Repositorio",
+        "url": "https://github.com/sammycastl/API-Cache.git",
+        "external": true
+      },
+      {
+        "type": "more",
+        "name": "Ver más",
+        "url": "/apicache",
+        "external": false
       }
     ]
   },
@@ -15,7 +23,7 @@
     "title": "Artículo 140 UNAH",
     "description": "Desarrollo y mantenimiento del sitio web oficial del programa de becas de la UNAH con sistema de autenticación y panel administrativo.",
     "icon": "🎓",
-    "tags": ["PHP", "MySQL", "Bootstrap"],
+    "tags": ["JavaScript", "SQLServer", "Bootstrap"],
     "links": [
       {
         "type": "live",
@@ -46,5 +54,17 @@
       }
     ],
     "architecture": "/images/architecture/ecommerce-arch.png"
+  },
+  {
+    "title": "Sitio Web Constructora JWT",
+    "description": "Desarrollo completo de página web responsive para empresa constructora con catálogo de proyectos y formulario de contacto integrado.",
+    "icon": "🏗️",
+    "tags": ["Web Design", "JavaScript", "Responsive"],
+    "links": [
+      {
+        "type": "github",
+        "url": "https://github.com/sammycastl/jwt.git"
+      }
+    ]
   }
 ]
