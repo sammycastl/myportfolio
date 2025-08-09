@@ -2,12 +2,12 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Pipeline de Datos y API con Caché Inteligente">
+<BaseLayout title="Generador de Reportes">
   <section class="project-detail-section">
     <div class="project-container">
       <!-- Encabezado del proyecto -->
       <div class="project-header">
-        <h1>Pipeline de Datos y API con Caché Inteligente <span class="project-icon"></span></h1>
+        <h1>Generador de Reportes <span class="project-icon"></span></h1>
         <p class="project-subtitle">Solución integral de backend para migración de datos, API segura y caché optimizada</p>
         
       </div>
@@ -18,9 +18,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="project-section">
           <h2> Resumen del Proyecto</h2>
           <p>
-            Implementación de un pipeline completo ETL con Azure Data Factory para migrar datos desde Azure Blob Storage
-            a Azure SQL Database, desarrollo de una API REST con FastAPI protegida con Firebase Authentication,
-            implementación de caché inteligente con Redis y sistema de monitoreo con Application Insights.
+            Sistema en la nube para generar y gestionar reportes de Pokémon utilizando datos de la PokeAPI. La 
+            aplicación permite crear reportes enriquecidos que incluyen las estadísticas base y habilidades de 
+            cada Pokémon, aplicar muestreo aleatorio para obtener conjuntos de datos de tamaño personalizado y 
+            eliminar permanentemente reportes tanto de la base de datos como del almacenamiento en la nube. El 
+            frontend, desarrollado con Next.js, ofrece una interfaz intuitiva y responsiva. El backend, implementado 
+            con FastAPI, gestiona la lógica de negocio y las integraciones, mientras que el procesamiento asíncrono 
+            se maneja con Azure Functions en Python. La persistencia de datos se realiza en Azure SQL Database y 
+            los archivos CSV se almacenan en Azure Blob Storage. El despliegue y la configuración de la infraestructura 
+            se automatizan mediante Terraform.
+
+Este proyecto destaca por su arquitectura modular, escalable y robusta, con un manejo eficiente de datos e integración fluida de servicios en la nube.
           </p>
         </div>
 
