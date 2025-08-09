@@ -1,14 +1,48 @@
 [
   {
-    "title": "Pipeline de Datos y API con Caché Inteligente",
-    "description": "Solución integral de backend que demuestra la capacidad de migrar datos a gran escala, exponerlos a través de una API segura y optimizada, y desplega en un entorno de nube productivo. Implementa de un sistema de monitoreo y una estrategia de caché con invalidación automática.",
+    "title": "Generador de Reportes",
+    "description": "Sistema en la nube para generar y gestionar reportes de Pokémon utilizando datos de la PokeAPI. La aplicación permite crear reportes enriquecidos que incluyen las estadísticas base y habilidades de cada Pokémon, aplicar muestreo aleatorio para obtener conjuntos de datos de tamaño personalizado y eliminar permanentemente reportes tanto de la base de datos como del almacenamiento en la nube. El frontend, desarrollado con Next.js, ofrece una interfaz intuitiva y responsiva. El backend, implementado con FastAPI, gestiona la lógica de negocio y las integraciones, mientras que el procesamiento asíncrono se maneja con Azure Functions en Python. La persistencia de datos se realiza en Azure SQL Database y los archivos CSV se almacenan en Azure Blob Storage. El despliegue y la configuración de la infraestructura se automatizan mediante Terraform.",
     "icon": "🎓",
-    "tags": ["Python", "Azure", "Firebase"],
+    "tags": ["Python", "Azure", "Next.js"],
     "links": [
       {
+        "type": "live",
+        "name": "UI",
+        "url": "https://ui-pokequeue-dev-fl.azurewebsites.net"
+      },
+      {
+        "type": "live",
+        "name": "API",
+        "url": "https://api-pokequeue-dev-fl.azurewebsites.net"
+      },
+      {
         "type": "github",
-        "name": "Repositorio",
-        "url": "https://github.com/sammycastl/API-Cache.git",
+        "name": "Terraform",
+        "url": "https://github.com/sammycastl/pokequeue_terraform.git",
+        "external": true
+      },
+      {
+        "type": "github",
+        "name": "DB",
+        "url": "https://github.com/sammycastl/pokequeue_db.git",
+        "external": true
+      },
+      {
+        "type": "github",
+        "name": "API",
+        "url": "https://github.com/sammycastl/pokequeue_api.git",
+        "external": true
+      },
+      {
+        "type": "github",
+        "name": "FunctionApp",
+        "url": "https://github.com/sammycastl/pokequeue_appfunction.git",
+        "external": true
+      },
+      {
+        "type": "github",
+        "name": "UI",
+        "url": "https://github.com/sammycastl/pokequeue_ui.git",
         "external": true
       },
       {

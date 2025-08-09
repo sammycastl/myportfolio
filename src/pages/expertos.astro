@@ -8,8 +8,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <!-- Encabezado del proyecto -->
       <div class="project-header">
         <h1>Generador de Reportes <span class="project-icon"></span></h1>
-        <p class="project-subtitle">Solución integral de backend para migración de datos, API segura y caché optimizada</p>
-        
       </div>
 
       <!-- Contenido principal -->
@@ -36,13 +34,14 @@ Este proyecto destaca por su arquitectura modular, escalable y robusta, con un m
         <div class="project-section">
           <div class="architecture-grid">
             <div class="arch-components">
-              <h3>Componentes Clave:</h3>
+              <h3>Tecnologias Clave:</h3>
               <ul>
-                <li><strong>ETL con Azure Data Factory</strong>: Pipeline para extraer, transformar y cargar datos</li>
-                <li><strong>API FastAPI</strong>: Endpoints protegidos con JWT de Firebase</li>
-                <li><strong>Caché Redis</strong>: Implementación con invalidación automática</li>
-                <li><strong>Monitoreo</strong>: Azure Application Insights para métricas</li>
-                <li><strong>Despliegue</strong>: Docker y Azure App Service</li>
+                <li>Next.js</li>
+                <li>FastAPI</li>
+                <li>Azure Functions</li>
+                <li>Azure SQL</li>
+                <li>Blob Storage</li>
+                <li>Terraform</li>
               </ul>
             </div>
           </div>
@@ -53,66 +52,67 @@ Este proyecto destaca por su arquitectura modular, escalable y robusta, con un m
           <h2>Implementación Técnica</h2>
           
           <div class="tech-grid">
-            <!-- Proceso ETL -->
+            <!-- Eliminar -->
             <div class="tech-category">
-              <h3>Proceso ETL</h3>
+              <h3>Eliminar</h3>
               <ul>
-                <li>Extracción desde Azure Blob Storage (CSV)</li>
-                <li>Transformación de datos en Azure Data Factory</li>
-                <li>Carga en Azure SQL Database</li>
-                <li>Validación de calidad de datos</li>
+                <li>Se agregó la capacidad de eliminar reportes, tanto del frontend (Next.js) como del backend (FastAPI), incluyendo la limpieza de registros asociados en la base de datos (Azure SQL DB) y el almacenamiento (Azure Blob Storage).</li>
               </ul>
             </div>
             
-            <!-- Desarrollo API -->
+            <!-- Enriquecer Reporte -->
             <div class="tech-category">
-              <h3>API REST</h3>
+              <h3>Enriquecer Reporte</h3>
               <ul>
-                <li>FastAPI con Python</li>
-                <li>Autenticación con Firebase JWT</li>
-                <li>Endpoints para registro (/signup) y login (/login)</li>
-                <li>Endpoint GET /catalog con filtrado por query params</li>
-                <li>Endpoint POST /catalog protegido para admins</li>
+                <li>Se mejoró el procesamiento del worker (Azure Function) para incluir datos adicionales de la PokeAPI (como habilidades, tipos y estadísticas) en el CSV generado, asegurando un reporte más detallado y útil.</li>
               </ul>
             </div>
 
-            <!-- Caché Inteligente -->
+            <!-- Muestreo Aleatorio -->
             <div class="tech-category">
-              <h3>Caché Inteligente</h3>
+              <h3>Muestreo Aleatorio</h3>
               <ul>
-                <li>Redis para almacenamiento de caché</li>
-                <li>Llaves dinámicas basadas en query params</li>
-                <li>Invalidación automática al agregar nuevos datos</li>
-                <li>Patrón Cache-Aside</li>
+                <li>Se añadió un campo numérico ("Número de Registros").</li>
+                <li>Se extendió el endpoint de creación para aceptar el parámetro sample_size y se almacenó en la base de datos.</li>
+                <li>Se implementó lógica para, al procesar el reporte, aplicar muestreo aleatorio (con random.sample()) cuando sample_size es válido, generando un CSV con un subconjunto aleatorio de los datos.</li>
               </ul>
             </div>
           </div>
         </div>
 
-        <!-- Repositorios y documentación -->
+        <!-- Repositorios -->
         <div class="project-section repos">
-          <h2> Repositorios y Documentación</h2>
+          <h2>Repositorios y Documentación</h2>
           <div class="repo-links">
-            <a href="https://github.com/sammycastl/API-Cache.git" class="repo-button" target="_blank" rel="noopener noreferrer">
-              <span></span> Código
+            <a href="https://github.com/sammycastl/pokequeue_terraform.git" class="repo-button" target="_blank" rel="noopener noreferrer">
+              <span></span>Terraform
             </a>
-            <a href="https://docs.google.com/presentation/d/11-4huf1jo172EffzTaUsrKat6qD-9hVILmoWUgkylB4/edit?usp=sharing" class="repo-button" target="_blank" rel="noopener noreferrer">
-              <span></span> Documentación
+            <a href="https://github.com/sammycastl/pokequeue_db.git" class="repo-button" target="_blank" rel="noopener noreferrer">
+              <span></span>DB
+            </a>
+            <a href="https://github.com/sammycastl/pokequeue_api.git" class="repo-button" target="_blank" rel="noopener noreferrer">
+              <span></span>API
+            </a>
+            <a href="https://github.com/sammycastl/pokequeue_appfunction.git" class="repo-button" target="_blank" rel="noopener noreferrer">
+              <span></span>FunctionApp
+            </a>
+            <a href="https://github.com/sammycastl/pokequeue_ui.git" class="repo-button" target="_blank" rel="noopener noreferrer">
+              <span></span>UI
             </a>
           </div>
         </div>
-
-        <!-- Lecciones aprendidas -->
-        <div class="project-section lessons">
-          <h2>💡 Lecciones Aprendidas</h2>
-          <div class="lessons-grid">
-            <div class="lesson-card">
-              <h3>✅ Lo que funcionó bien</h3>
-              <ul>
-                <li>Integración eficiente entre Azure Data Factory y Azure SQL</li>
-                <li>Creacion de los Servicios en Azure</li>
-              </ul>
-            </div>
+      </div>
+      
+      <!-- URLs de Acceso -->
+        <div class="project-section repos">
+          <h2>URLs de Acceso</h2>
+          <div class="repo-links">
+            <a href="https://ui-pokequeue-dev-fl.azurewebsites.net" class="repo-button" target="_blank" rel="noopener noreferrer">
+              <span></span>UI
+            </a>
+            <a href="https://api-pokequeue-dev-fl.azurewebsites.net" class="repo-button" target="_blank" rel="noopener noreferrer">
+              <span></span>API
+            </a>
           </div>
         </div>
       </div>
